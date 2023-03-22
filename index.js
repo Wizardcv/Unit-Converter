@@ -10,6 +10,9 @@ const length = document.getElementById("length-btn")
 const volume = document.getElementById("volume-btn")
 const mass = document.getElementById("mass-btn")
 
+
+
+
 length.innerHTML += `<label>Length(Meter/Feet) </label> <br> <br>`
 volume.innerHTML += `<label> Volume(Liters/Gallons)</label> <br> <br>`
 mass.innerHTML += `<label> Mass(Kilograms/Pounds)</label> <br> <br>`
@@ -20,7 +23,8 @@ convert.addEventListener ("click", (e) => {
     volumeTotal(input.value)
     massTotal(input.value)
    
-}, {once : true});
+}, {once: true});
+
 
 
 
@@ -55,4 +59,13 @@ function massTotal (desc) {
     let newTotal = `${desc} kilos = ${poundSum} pounds | ${desc} pounds = ${kiloSum} kilos`
     mass.innerHTML += `<label style = "font-size: 15px; color: white"> ${newTotal} </label>`
     
+}
+
+// Need to fix this using  onchange so that any input value is automatically calculated and changed 
+
+function myFunction() {
+    let val = document.getElementById("num-cont").value;
+    lengthTotal(val)
+    volumeTotal(val)
+    massTotal(val)
 }
